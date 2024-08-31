@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HEART</title>
+      <style>
+body {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      min-height:100vh;
+      margin: 0;
+      background-color: lightcoral;
+}
+
+h1 {
+      text-align: center;
+      font-size: 2cm;
+      margin-right: 90px;
+      animation: pulsee 1s linear infinite;
+}
+
+.heart {
+      background: red;
+      position: relative;
+      height: 100px;
+      width:100px;
+      /* Animation */
+      transform: rotate(-45deg) scale(1);
+      animation: pulse 1s linear infinite;
+      color: white;
+}
+
+
+.heart::after {
+      /* background:blue; */
+      background:inherit;
+      border-radius: 50%; /* To make circle */
+      content:'';
+      position:absolute;
+      /* top: -100px;*/
+      top: -50%; /* Inherit properties of parent */
+      /* left: -100px; */
+      left:0;
+      height: 100px;
+      width:100px;
+}
+.heart::before {
+  /*  background:green; */
+      background:inherit; 
+      border-radius: 50%; /* To make circle */
+      content:'';
+      position:absolute;
+      top:0; 
+      right:-50%; /* Inherit properties of parent */
+      height: 100px;
+      width:100px;
+}
+
+@keyframes pulsee {
+      0% {
+            transform: scale(1);
+            opacity: 1;
+      }
+      50% {
+            transform: scale(1.3);
+            opacity: 1;
+      }
+      100% {
+            transform: scale(1);
+            opacity:1;
+      }
+}
+
+@keyframes pulse{
+      0% {
+          transform: rotate(-45deg) scale(1);
+          opacity: 0;
+      }/*
+      10% {
+            transform: rotate(-45deg) scale(1.3);
+      }
+      20% {
+            transform: rotate(-45deg) scale(0.9);
+      }
+      30% {
+            transform: rotate(-45deg) scale(1.2);
+      }
+      40% {
+            transform: rotate(-45deg) scale(0.9);
+      }*/
+      50% {
+            transform: rotate(-45deg) scale(1.3);
+            opacity: 1;
+      }/*
+      60% {
+            transform: rotate(-45deg) scale(0.95);
+      }
+      70% {
+            transform: rotate(-45deg) scale(1);
+      } */
+      100% {
+            transform: rotate(-45deg) scale(1);
+            opacity: 1;
+      }
+}
+
+      </style>
+</head>
+<body>
+      <h1>YEHEY!!</h1>      
+      <div class="heart"></div>
+</body>
+</html>
